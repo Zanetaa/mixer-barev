@@ -3,8 +3,8 @@ import './style.css';
 
 export const ColorSlider = ({ baseColor, colorName }) => {
   return (
-    <div class="sliders">
-      <label for="red">Červená</label>
+    <>
+      <label for={baseColor}>{colorName}</label>
       <input
         type="range"
         class="slider slider--red"
@@ -13,6 +13,6 @@ export const ColorSlider = ({ baseColor, colorName }) => {
         max="255"
         value="0"
       />
-    </div>
+    </>
   );
 };

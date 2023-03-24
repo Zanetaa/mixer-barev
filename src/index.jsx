@@ -4,22 +4,9 @@ import './style.css';
 import { ColorSlider } from './ColorSlider';
 
 const App = () => {
-  const redSlider = document.getElementById('redSlider');
-  const greenSlider = document.getElementById('greenSlider');
-  const blueSlider = document.getElementById('blueSlider');
-  const colorBox = document.getElementById('color-box');
-
-  const changeColor = () => {
-    const redValue = redSlider.value;
-    const greenValue = greenSlider.value;
-    const blueValue = blueSlider.value;
-    const color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
-    colorBox.style.backgroundColor = color;
-  };
-
-  redSlider.addEventListener('input', changeColor);
-  greenSlider.addEventListener('input', changeColor);
-  blueSlider.addEventListener('input', changeColor);
+  const [redValue, setRedValue] = useState(0);
+  const [greenValue, setGreenValue] = useState(0);
+  const [blueValue, setBlueValue] = useState(0);
 
   return (
     <div class="color-panel">
