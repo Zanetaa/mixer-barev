@@ -20,6 +20,18 @@ const App = () => {
   redSlider.addEventListener('input', changeColor);
   greenSlider.addEventListener('input', changeColor);
   blueSlider.addEventListener('input', changeColor);
+
+  return (
+    <div class="color-panel">
+      <h1>Mixér barev</h1>
+      <div class="sliders">
+        <ColorSlider baseColor="red" colorName="Červená" />
+        <ColorSlider baseColor="green" colorName="Zelená" />
+        <ColorSlider baseColor="blue" colorName="Modrá" />
+      </div>
+      <div class="color-box" id="color-box"></div>
+    </div>
+  );
 };
 
 createRoot(document.querySelector('#app')).render(<App />);
