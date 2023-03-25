@@ -10,6 +10,10 @@ const App = () => {
   const [blueValue, setBlueValue] = useState(0);
   const [value, setValue] = useState(0);
 
+  const mystyle = {
+    backgroundColor: 'rgb(${redValue}, ${greenValue}, ${blueValue})',
+  };
+
   const handleValueChangeRed = (value) => {
     setRedValue(value);
   };
@@ -20,10 +24,6 @@ const App = () => {
 
   const handleValueChangeGreen = (value) => {
     setGreenValue(value);
-  };
-
-  const mystyle = () => {
-    return redValue + greenValue + blueValue;
   };
 
   return (
@@ -46,11 +46,7 @@ const App = () => {
           onValueChange={handleValueChangeBlue}
         />
       </div>
-      <div
-        className="color-box"
-        id="color-box"
-        style={{ backgroundColor: 'rgb(${ mystyle() })' }}
-      ></div>
+      <div className="color-box" id="color-box" style={mystyle}></div>
     </div>
   );
 };
