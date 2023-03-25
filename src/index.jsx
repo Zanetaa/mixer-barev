@@ -10,10 +10,6 @@ const App = () => {
   const [blueValue, setBlueValue] = useState(0);
   const [value, setValue] = useState(0);
 
-  const mystyle = {
-    backgroundColor: 'rgb(${redValue}, ${greenValue}, ${blueValue})',
-  };
-
   const handleValueChangeRed = (value) => {
     setRedValue(value);
   };
@@ -26,27 +22,35 @@ const App = () => {
     setGreenValue(value);
   };
 
+  const mystyle = () => {
+    return redValue + greenValue + blueValue;
+  };
+
   return (
     <div className="color-panel">
       <h1>Mixér barev</h1>
       <div className="sliders">
         <ColorSlider
-          baseColor="red"
+          baseColor={redValue}
           colorName="Červená"
           onValueChange={handleValueChangeRed}
         />
         <ColorSlider
-          baseColor="green"
+          baseColor={greenValue}
           colorName="Zelená"
           onValueChange={handleValueChangeGreen}
         />
         <ColorSlider
-          baseColor="blue"
+          baseColor={blueValue}
           colorName="Modrá"
           onValueChange={handleValueChangeBlue}
         />
       </div>
-      <div className="color-box" id="color-box" style={mystyle}></div>
+      <div
+        className="color-box"
+        id="color-box"
+        style={{ backgroundColor: 'rgb(${ mystyle() })' }}
+      ></div>
     </div>
   );
 };
