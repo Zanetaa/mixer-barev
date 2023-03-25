@@ -1,17 +1,20 @@
 import React from 'react';
 import './style.css';
 
-export const ColorSlider = ({ baseColor, colorName }) => {
+export const ColorSlider = ({ baseColor, colorName, onValueChange }) => {
   return (
     <>
-      <label for={baseColor}>{colorName}</label>
+      <label htmlFor={baseColor}>{colorName}</label>
       <input
         type="range"
-        class="slider slider--red"
+        className="slider slider--red"
         id="redSlider"
         min="0"
         max="255"
         value="0"
+        onChange={(event) => {
+          onValueChange(event.target.value);
+        }}
       />
     </>
   );
