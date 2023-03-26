@@ -8,7 +8,6 @@ const App = () => {
   const [redValue, setRedValue] = useState(0);
   const [greenValue, setGreenValue] = useState(0);
   const [blueValue, setBlueValue] = useState(0);
-  const [value, setValue] = useState(0);
 
   const mystyle = {
     backgroundColor: 'rgb(${redValue}, ${greenValue}, ${blueValue})',
@@ -31,19 +30,22 @@ const App = () => {
       <h1>Mixér barev</h1>
       <div className="sliders">
         <ColorSlider
-          baseColor={redValue}
+          baseColor="red"
           colorName="Červená"
           onValueChange={handleValueChangeRed}
+          value={redValue}
         />
         <ColorSlider
-          baseColor={greenValue}
+          baseColor="green"
           colorName="Zelená"
           onValueChange={handleValueChangeGreen}
+          value={greenValue}
         />
         <ColorSlider
-          baseColor={blueValue}
+          baseColor="blue"
           colorName="Modrá"
           onValueChange={handleValueChangeBlue}
+          value={blueValue}
         />
       </div>
       <div className="color-box" id="color-box" style={mystyle}></div>

@@ -6,13 +6,6 @@
   border-radius: 50%;
 }
 
-.sliders {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
-
 .slider {
   -webkit-appearance: none;
   width: 100%;
