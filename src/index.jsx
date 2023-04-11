@@ -10,7 +10,7 @@ const App = () => {
   const [blueValue, setBlueValue] = useState(0);
 
   const mystyle = {
-    backgroundColor: 'rgb(${redValue}, ${greenValue}, ${blueValue})',
+    backgroundColor: `rgb(${redValue}, ${greenValue}, ${blueValue})`,
   };
 
   const handleValueChangeRed = (value) => {
